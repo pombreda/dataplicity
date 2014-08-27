@@ -1,3 +1,4 @@
+import getpass
 from dataplicity.app.subcommand import SubCommand
 from dataplicity.app.subcommands.build import do_build
 from dataplicity import firmware
@@ -27,6 +28,9 @@ class Publish(SubCommand):
                             help="Build the current firmware")
 
     def run(self):
+        username = raw_input('username: ')
+        password = getpass.getpass('password: ')
+
         log.setLevel(logging.ERROR)
         args = self.args
 
@@ -72,6 +76,8 @@ class Publish(SubCommand):
                                version=version,
                                firmware_b64=firmware_b64,
                                ui=ui,
+                               username=username,
+                               password=password,
                                replace=args.replace)
 
         batch.get_result('auth_result')
