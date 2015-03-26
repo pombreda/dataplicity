@@ -127,9 +127,12 @@ class App(object):
         except Exception as e:
             if self.args.debug:
                 raise
-            #sys.stderr.write(str(e) + '\n')
             sys.stderr.write("(dataplicity {}) {}\n".format(__version__, e))
             cmd = sys.argv[0].rsplit('/', 1)[-1]
             debug_cmd = ' '.join([cmd, '--debug'] + sys.argv[1:])
             sys.stderr.write("(run '{}' for a full traceback)\n".format(debug_cmd))
             return -1
+
+def run():
+    app = App()
+    sys.exit(app.run())

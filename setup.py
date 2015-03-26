@@ -20,11 +20,16 @@ setup(name='dataplicity',
       author_email='support@dataplicity.com',
       url='http://www.dataplicity.com',
       platforms=['any'],
-
       packages=find_packages(),
-
       classifiers=classifiers,
-      scripts=["dataplicity/app/dataplicity"],
+
+      entry_points={
+          "console_scripts": [
+              'dataplicity = dataplicity.app.app:run',
+              'dataplicity-srv = dataplicity.srv.app:run'
+          ]
+      },
+
       install_requires=['websocket-client',
                         'python-daemon==2.0.1',
                         'fs>=0.5.0',
