@@ -4,6 +4,7 @@ from __future__ import print_function
 from dataplicity.compat import with_metaclass
 from dataplicity.srv import service
 
+
 class SubCommandMeta(type):
     """Keeps a registry of sub-commands"""
     registry = {}
@@ -22,6 +23,7 @@ class SubCommandType(object):
     def __init__(self, app):
         self.app = app
         self._service = None
+        super(SubCommandType, self).__init__()
 
     def add_arguments(self, parser):
         pass

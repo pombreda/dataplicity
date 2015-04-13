@@ -1,1 +1,2 @@
-__all__ = ['list']
+__all__ = ['list',
+           'daemon']

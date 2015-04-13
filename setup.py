@@ -26,7 +26,8 @@ setup(name='dataplicity',
       entry_points={
           "console_scripts": [
               'dataplicity = dataplicity.app.app:run',
-              'dataplicity-srv = dataplicity.srv.app:run'
+              'dataplicity-srv = dataplicity.srv.app:run',
+              'dps = dataplicity.srv.app:run'
           ]
       },
 

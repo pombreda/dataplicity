@@ -2,7 +2,6 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from dataplicity.srv.subcommand import SubCommand
-from dataplicity.srv.service import Service
 
 
 class List(SubCommand):
@@ -11,7 +10,6 @@ class List(SubCommand):
 
     def add_arguments(self, parser):
         pass
-
 
     def run(self):
         service = self.service
